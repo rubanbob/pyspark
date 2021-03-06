@@ -43,4 +43,4 @@ rm -rf "$venv"/spark-env.tar.gz
 # --deploy-mode cluster \
 # spark_JDBC.py
 
-
+# GOOD article to refer : https://databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html
