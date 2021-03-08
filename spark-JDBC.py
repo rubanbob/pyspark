@@ -50,11 +50,11 @@ def get_table_info():
 
 if __name__ == '__main__':
     spark = SparkSession.builder\
-                        .config("spark.driver.extraClassPath", jar path)\
+                        .config("spark.driver.extraClassPath", jar_path)\
                         .config("spark.executor.extraclassPath", jar_path)\
-                        .getorCreate()
+                        .getOrCreate()
 
-    min_val, max_val = get table info()
+    min_val, max_val = get_table_info()
 
     print("Min value: %s, Max value : %s"%(min_val, max_val))
 
