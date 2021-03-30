@@ -1,7 +1,3 @@
-# locate to local pyspark
-import findspark
-findspark.init(r'C:\spark\spark-3.1.1-bin-hadoop3.2')
-
 # spark program begins
 import datetime
 from pyspark.sql import SparkSession
@@ -36,7 +32,7 @@ if __name__ == "__main__":
     print("Starting JDBC conneciton..")
 
     # inputs
-    jdbc_driver = "org.jdbc.driver.OracleDriver"
+    jdbc_driver = "oracle.jdbc.driver.OracleDriver"
     jdbc_url = "jdbc:oracle:thin:@<host>:<port>:<SID>"
     jdbc_uname = "oralce"
     jdbc_pass = "oracle-password"
@@ -50,9 +46,11 @@ if __name__ == "__main__":
     spark.stop()
 
 
-# SPARK SUBMIT WITH BELOW commands
+# SPARK SUBMIT WITH BELOW commands, install jaydebeapi in venv(my_venv) - and place packed venv in HDFS lcoation
 '''
 spark2-submit --name app-name-ruban \
+--conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=./my_venv/bin/python \
+--conf spark.yarn.dist.archives=hdfs:///my_hdfs_path/project/venv/my_venv.tar.gz#my_venv \
 --master yarn \
 --deploy-mode cluster \
 --jars ./jars/ojdbc8.jar \
