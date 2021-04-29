@@ -1,0 +1,6 @@
+seq,dept Id,emp no,name,age,sex,dept
+1,d001,01,Mark,25,M,Electronics
+2,d001,02,Stacy,26,f,Electronics
+3,d001,01,Bob,,m,Electronics
+4,d002,03,Kim,34,x,Finance
+5,d002,02,Ariana,2three,F,Finance
